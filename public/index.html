@@ -1,0 +1,1996 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>
+      INKA INTERIOR ID | Transforming Space Into Elegant
+      Living
+    </title>
+    <meta
+      name="description"
+      content="Professional interior design services for residential and commercial spaces. Premium quality, functional space, and modern design." />
+
+    <!-- Google Fonts -->
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet" />
+
+    <!-- FontAwesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              inka: {
+                gold: "#C9A74D",
+                goldLight: "#dcc178",
+                charcoal: "#2D2D2D",
+                cream: "#F9F8F6",
+                grayLight: "#E8E8E8",
+                whiteWarm: "#FCFCFC",
+              },
+            },
+            fontFamily: {
+              sans: ["Montserrat", "sans-serif"],
+              serif: ["Playfair Display", "serif"],
+            },
+            backgroundImage: {
+              "hero-pattern":
+                "linear-gradient(to right bottom, rgba(45, 45, 45, 0.8), rgba(45, 45, 45, 0.6)), url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')",
+              "gold-gradient":
+                "linear-gradient(135deg, #F9F8F6 0%, #E8E8E8 100%)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Custom Styles -->
+    <style>
+      body {
+        background-color: #fcfcfc;
+        color: #2d2d2d;
+      }
+
+      /* Scrollbar Styling */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f9f8f6;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #c9a74d;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #b5953d;
+      }
+
+      /* Utilities */
+      .text-gradient {
+        background: linear-gradient(
+          to right,
+          #c9a74d,
+          #b5953d
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Animations */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-out;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .hover-lift {
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .hover-lift:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -5px rgba(201, 167, 77, 0.2);
+      }
+
+      .img-zoom-container {
+        overflow: hidden;
+      }
+      .img-zoom {
+        transition: transform 0.6s ease;
+      }
+      .img-zoom-container:hover .img-zoom {
+        transform: scale(1.05);
+      }
+
+      /* Portfolio Overlay */
+      .portfolio-overlay {
+        background: linear-gradient(
+          to top,
+          rgba(45, 45, 45, 0.9),
+          transparent
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      .portfolio-item:hover .portfolio-overlay {
+        opacity: 1;
+      }
+
+      .portfolio-content {
+        transform: translateY(20px);
+        opacity: 0;
+        transition: all 0.3s ease 0.1s;
+      }
+      .portfolio-item:hover .portfolio-content {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      /* Floating Bot Animation */
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+      .floating-bot {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      /* Chatbot UI */
+      .chat-window {
+        transform-origin: bottom right;
+        transition:
+          transform 0.3s
+            cubic-bezier(0.175, 0.885, 0.32, 1.275),
+          opacity 0.3s ease;
+      }
+      .chat-window.hidden {
+        transform: scale(0);
+        opacity: 0;
+        pointer-events: none;
+      }
+      .typing-indicator span {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        background-color: #c9a74d;
+        border-radius: 50%;
+        margin: 0 2px;
+        animation: typing 1s infinite alternate;
+      }
+      .typing-indicator span:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .typing-indicator span:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+      @keyframes typing {
+        0% {
+          transform: translateY(0);
+          opacity: 0.5;
+        }
+        100% {
+          transform: translateY(-3px);
+          opacity: 1;
+        }
+      }
+
+      /* Language Toggle Switch */
+      .lang-switch {
+        position: relative;
+        display: inline-flex;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 2px;
+        cursor: pointer;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+      }
+      #navbar.bg-white .lang-switch {
+        background-color: rgba(0, 0, 0, 0.05);
+        border-color: rgba(0, 0, 0, 0.1);
+      }
+      .lang-option {
+        padding: 4px 10px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: white;
+        z-index: 1;
+        transition: color 0.3s ease;
+      }
+      #navbar.bg-white .lang-option {
+        color: #2d2d2d;
+      }
+      .lang-option.active {
+        color: #2d2d2d;
+      }
+      #navbar.bg-white .lang-option.active {
+        color: white;
+      }
+      .lang-slider {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: calc(50% - 2px);
+        height: calc(100% - 4px);
+        background-color: #c9a74d;
+        border-radius: 18px;
+        transition: transform 0.3s
+          cubic-bezier(0.25, 0.1, 0.25, 1);
+        z-index: 0;
+      }
+      .lang-switch[data-lang="en"] .lang-slider {
+        transform: translateX(100%);
+      }
+    </style>
+  </head>
+  <body
+    class="antialiased selection:bg-inka-gold selection:text-white">
+    <!-- Navigation -->
+    <nav
+      id="navbar"
+      class="fixed w-full z-50 transition-all duration-300 py-4 bg-transparent">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center">
+          <!-- Logo -->
+          <div class="flex-shrink-0 flex items-center">
+            <a
+              href="#"
+              class="text-2xl font-sans font-bold tracking-widest text-white transition-colors duration-300"
+              id="nav-logo">
+              <span class="text-inka-gold">IΠKΛ</span><br />
+              <span
+                class="text-[10px] tracking-[0.3em] font-light uppercase mt-[-5px] block text-center"
+                >Interior</span
+              >
+            </a>
+          </div>
+
+          <!-- Desktop Menu -->
+          <div
+            class="hidden md:flex space-x-8 items-center">
+            <a
+              href="#home"
+              class="nav-link text-white text-sm uppercase tracking-wider font-medium hover:text-inka-gold transition-colors"
+              data-id="Beranda"
+              data-en="Home"
+              >Beranda</a
+            >
+            <a
+              href="#about"
+              class="nav-link text-white text-sm uppercase tracking-wider font-medium hover:text-inka-gold transition-colors"
+              data-id="Tentang"
+              data-en="About"
+              >Tentang</a
+            >
+            <a
+              href="#services"
+              class="nav-link text-white text-sm uppercase tracking-wider font-medium hover:text-inka-gold transition-colors"
+              data-id="Layanan"
+              data-en="Services"
+              >Layanan</a
+            >
+            <a
+              href="#portfolio"
+              class="nav-link text-white text-sm uppercase tracking-wider font-medium hover:text-inka-gold transition-colors"
+              data-id="Portofolio"
+              data-en="Portfolio"
+              >Portofolio</a
+            >
+            <a
+              href="#contact"
+              class="px-6 py-2 border border-inka-gold text-inka-gold hover:bg-inka-gold hover:text-white transition-all duration-300 rounded-sm text-sm uppercase tracking-wider font-medium"
+              data-id="Konsultasi"
+              data-en="Consult Now"
+              >Konsultasi</a
+            >
+
+            <!-- Desktop Language Toggle -->
+            <div
+              class="lang-switch ml-4"
+              id="lang-toggle-desktop"
+              data-lang="id">
+              <div class="lang-slider"></div>
+              <span
+                class="lang-option active"
+                data-target="id"
+                >ID</span
+              >
+              <span class="lang-option" data-target="en"
+                >EN</span
+              >
+            </div>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden flex items-center gap-4">
+            <!-- Mobile Language Toggle -->
+            <div
+              class="lang-switch"
+              id="lang-toggle-mobile"
+              data-lang="id">
+              <div class="lang-slider"></div>
+              <span
+                class="lang-option active"
+                data-target="id"
+                >ID</span
+              >
+              <span class="lang-option" data-target="en"
+                >EN</span
+              >
+            </div>
+
+            <button
+              id="mobile-menu-btn"
+              class="text-white hover:text-inka-gold focus:outline-none">
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Panel -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white absolute top-full left-0 w-full shadow-lg border-t border-inka-grayLight">
+        <div class="px-4 pt-2 pb-6 space-y-1">
+          <a
+            href="#home"
+            class="block px-3 py-3 text-inka-charcoal hover:text-inka-gold hover:bg-inka-cream font-medium uppercase text-sm tracking-wider"
+            data-id="Beranda"
+            data-en="Home"
+            >Beranda</a
+          >
+          <a
+            href="#about"
+            class="block px-3 py-3 text-inka-charcoal hover:text-inka-gold hover:bg-inka-cream font-medium uppercase text-sm tracking-wider"
+            data-id="Tentang"
+            data-en="About"
+            >Tentang</a
+          >
+          <a
+            href="#services"
+            class="block px-3 py-3 text-inka-charcoal hover:text-inka-gold hover:bg-inka-cream font-medium uppercase text-sm tracking-wider"
+            data-id="Layanan"
+            data-en="Services"
+            >Layanan</a
+          >
+          <a
+            href="#portfolio"
+            class="block px-3 py-3 text-inka-charcoal hover:text-inka-gold hover:bg-inka-cream font-medium uppercase text-sm tracking-wider"
+            data-id="Portofolio"
+            data-en="Portfolio"
+            >Portofolio</a
+          >
+          <a
+            href="#contact"
+            class="block px-3 py-3 text-inka-gold font-bold uppercase text-sm tracking-wider"
+            data-id="Konsultasi"
+            data-en="Consult Now"
+            >Konsultasi</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="relative h-screen flex items-center justify-center bg-hero-pattern bg-cover bg-center bg-no-repeat bg-fixed">
+      <div
+        class="relative z-10 text-center px-4 sm:px-6 lg:px-8 w-full max-w-5xl mx-auto mt-20">
+        <span
+          class="block text-inka-gold font-sans font-semibold tracking-[0.2em] uppercase mb-4 reveal"
+          data-id="Desain Interior Premium"
+          data-en="Premium Interior Design"
+          >Desain Interior Premium</span
+        >
+        <h1
+          class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight mb-6 reveal"
+          style="transition-delay: 0.1s"
+          data-id="Mengubah Ruang<br>Menjadi Hunian Elegan"
+          data-en="Transforming Space<br>Into Elegant Living">
+          Mengubah Ruang<br />Menjadi Hunian Elegan
+        </h1>
+        <p
+          class="mt-4 text-lg md:text-xl text-gray-200 font-light max-w-2xl mx-auto mb-10 reveal"
+          style="transition-delay: 0.2s"
+          data-id="Kami merancang ruang interior kustom yang secara sempurna memadukan keanggunan abadi dengan fungsionalitas modern untuk kenyamanan optimal Anda."
+          data-en="We craft bespoke interior spaces that perfectly blend timeless elegance with modern functionality for your ultimate comfort.">
+          Kami merancang ruang interior kustom yang secara
+          sempurna memadukan keanggunan abadi dengan
+          fungsionalitas modern untuk kenyamanan optimal
+          Anda.
+        </p>
+        <div
+          class="flex flex-col sm:flex-row justify-center gap-4 reveal"
+          style="transition-delay: 0.3s">
+          <a
+            href="#contact"
+            class="bg-inka-gold text-white px-8 py-4 rounded-sm font-medium tracking-wider hover:bg-white hover:text-inka-charcoal transition-all duration-300 shadow-lg"
+            data-id="Konsultasi Sekarang"
+            data-en="Consult Now"
+            >Konsultasi Sekarang</a
+          >
+          <a
+            href="#portfolio"
+            class="border border-white text-white px-8 py-4 rounded-sm font-medium tracking-wider hover:bg-white hover:text-inka-charcoal transition-all duration-300"
+            data-id="Lihat Portofolio"
+            data-en="View Portfolio"
+            >Lihat Portofolio</a
+          >
+        </div>
+
+        <!-- Stats -->
+        <div
+          class="grid grid-cols-3 gap-4 md:gap-8 mt-20 pt-10 border-t border-white/20 reveal"
+          style="transition-delay: 0.4s">
+          <div>
+            <h3
+              class="text-3xl md:text-4xl font-serif font-bold text-inka-gold">
+              150+
+            </h3>
+            <p
+              class="text-xs md:text-sm text-gray-300 uppercase tracking-wider mt-1"
+              data-id="Proyek Selesai"
+              data-en="Project Completed">
+              Proyek Selesai
+            </p>
+          </div>
+          <div>
+            <h3
+              class="text-3xl md:text-4xl font-serif font-bold text-inka-gold">
+              100%
+            </h3>
+            <p
+              class="text-xs md:text-sm text-gray-300 uppercase tracking-wider mt-1"
+              data-id="Klien Puas"
+              data-en="Happy Clients">
+              Klien Puas
+            </p>
+          </div>
+          <div>
+            <h3
+              class="text-3xl md:text-4xl font-serif font-bold text-inka-gold">
+              10+
+            </h3>
+            <p
+              class="text-xs md:text-sm text-gray-300 uppercase tracking-wider mt-1"
+              data-id="Tahun Pengalaman"
+              data-en="Years Experience">
+              Tahun Pengalaman
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div
+        class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <a
+          href="#about"
+          class="text-white opacity-70 hover:opacity-100 transition-opacity">
+          <i class="fas fa-chevron-down text-2xl"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section
+      id="about"
+      class="py-24 bg-inka-whiteWarm relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <!-- Image -->
+          <div
+            class="relative reveal img-zoom-container rounded-sm shadow-2xl">
+            <img
+              src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+              alt="Premium Interior"
+              class="w-full h-auto object-cover img-zoom rounded-sm" />
+            <!-- Accent Box -->
+            <div
+              class="absolute -bottom-6 -right-6 w-48 h-48 bg-inka-gold -z-10 rounded-sm"></div>
+            <!-- Overlay Text -->
+            <div
+              class="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm p-6 rounded-sm shadow-lg max-w-xs">
+              <p
+                class="font-serif italic text-inka-charcoal"
+                data-id='"Desain bukan hanya tentang bagaimana tampilannya, desain adalah tentang bagaimana ia berfungsi."'
+                data-en='"Design is not just what it looks like, design is how it works."'>
+                "Desain bukan hanya tentang bagaimana
+                tampilannya, desain adalah tentang bagaimana
+                ia berfungsi."
+              </p>
+            </div>
+          </div>
+
+          <!-- Text Content -->
+          <div
+            class="reveal"
+            style="transition-delay: 0.2s">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-12 h-[2px] bg-inka-gold"></div>
+              <span
+                class="text-inka-gold font-semibold uppercase tracking-widest text-sm"
+                data-id="Tentang Kami"
+                data-en="About Us"
+                >Tentang Kami</span
+              >
+            </div>
+            <h2
+              class="text-4xl md:text-5xl font-serif font-bold text-inka-charcoal mb-6 leading-tight"
+              data-id="Merancang Ruang <span class='text-gradient'>Abadi</span> & Fungsional"
+              data-en="Crafting <span class='text-gradient'>Timeless</span> & Functional Spaces">
+              Merancang Ruang
+              <span class="text-gradient">Abadi</span> &
+              Fungsional
+            </h2>
+            <p
+              class="text-gray-600 mb-6 font-light leading-relaxed"
+              data-id="INKA INTERIOR ID adalah firma desain interior terkemuka yang berdedikasi untuk mengubah ruang biasa menjadi lingkungan yang luar biasa. Dengan ketelitian terhadap detail dan komitmen pada keunggulan, kami mengkurasi ruang yang mencerminkan kepribadian dan gaya hidup unik Anda."
+              data-en="INKA INTERIOR ID is a premier interior design firm dedicated to transforming ordinary spaces into extraordinary environments. With a keen eye for detail and a commitment to excellence, we curate spaces that reflect your unique personality and lifestyle.">
+              INKA INTERIOR ID adalah firma desain interior
+              terkemuka yang berdedikasi untuk mengubah
+              ruang biasa menjadi lingkungan yang luar
+              biasa. Dengan ketelitian terhadap detail dan
+              komitmen pada keunggulan, kami mengkurasi
+              ruang yang mencerminkan kepribadian dan gaya
+              hidup unik Anda.
+            </p>
+            <p
+              class="text-gray-600 mb-8 font-light leading-relaxed"
+              data-id="Dari konseptualisasi hingga eksekusi yang sempurna, tim desainer kami yang penuh semangat memastikan setiap proyek memenuhi standar kemewahan dan kepraktisan tertinggi."
+              data-en="From conceptualization to flawless execution, our team of passionate designers ensures every project meets the highest standards of luxury and practicality.">
+              Dari konseptualisasi hingga eksekusi yang
+              sempurna, tim desainer kami yang penuh
+              semangat memastikan setiap proyek memenuhi
+              standar kemewahan dan kepraktisan tertinggi.
+            </p>
+
+            <!-- Core Values -->
+            <div class="grid grid-cols-2 gap-6 mt-8">
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-inka-cream flex items-center justify-center text-inka-gold flex-shrink-0">
+                  <i class="fas fa-couch"></i>
+                </div>
+                <div>
+                  <h4
+                    class="font-semibold text-inka-charcoal mb-1"
+                    data-id="Desain Modern"
+                    data-en="Modern Design">
+                    Desain Modern
+                  </h4>
+                  <p
+                    class="text-sm text-gray-500 font-light"
+                    data-id="Estetika kontemporer."
+                    data-en="Contemporary aesthetics.">
+                    Estetika kontemporer.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-inka-cream flex items-center justify-center text-inka-gold flex-shrink-0">
+                  <i class="fas fa-vector-square"></i>
+                </div>
+                <div>
+                  <h4
+                    class="font-semibold text-inka-charcoal mb-1"
+                    data-id="Ruang Fungsional"
+                    data-en="Functional Space">
+                    Ruang Fungsional
+                  </h4>
+                  <p
+                    class="text-sm text-gray-500 font-light"
+                    data-id="Tata letak yang dioptimalkan."
+                    data-en="Optimized layouts.">
+                    Tata letak yang dioptimalkan.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-inka-cream flex items-center justify-center text-inka-gold flex-shrink-0">
+                  <i class="fas fa-gem"></i>
+                </div>
+                <div>
+                  <h4
+                    class="font-semibold text-inka-charcoal mb-1"
+                    data-id="Kualitas Premium"
+                    data-en="Premium Quality">
+                    Kualitas Premium
+                  </h4>
+                  <p
+                    class="text-sm text-gray-500 font-light"
+                    data-id="Menggunakan material terbaik."
+                    data-en="Finest materials used.">
+                    Menggunakan material terbaik.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-inka-cream flex items-center justify-center text-inka-gold flex-shrink-0">
+                  <i class="fas fa-user-tie"></i>
+                </div>
+                <div>
+                  <h4
+                    class="font-semibold text-inka-charcoal mb-1"
+                    data-id="Tim Profesional"
+                    data-en="Professional Team">
+                    Tim Profesional
+                  </h4>
+                  <p
+                    class="text-sm text-gray-500 font-light"
+                    data-id="Eksekusi ahli."
+                    data-en="Expert execution.">
+                    Eksekusi ahli.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Work / Services Section -->
+    <section id="services" class="py-24 bg-inka-cream">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 reveal">
+          <div
+            class="flex items-center justify-center gap-4 mb-4">
+            <div class="w-12 h-[2px] bg-inka-gold"></div>
+            <span
+              class="text-inka-gold font-semibold uppercase tracking-widest text-sm"
+              data-id="Keahlian Kami"
+              data-en="Our Expertise"
+              >Keahlian Kami</span
+            >
+            <div class="w-12 h-[2px] bg-inka-gold"></div>
+          </div>
+          <h2
+            class="text-4xl md:text-5xl font-serif font-bold text-inka-charcoal mb-4"
+            data-id="Layanan Profesional"
+            data-en="Professional Services">
+            Layanan Profesional
+          </h2>
+          <p
+            class="text-gray-600 font-light max-w-2xl mx-auto"
+            data-id="Solusi desain komprehensif yang disesuaikan untuk meningkatkan lingkungan tempat tinggal dan kerja Anda."
+            data-en="Comprehensive design solutions tailored to elevate your living and working environments.">
+            Solusi desain komprehensif yang disesuaikan
+            untuk meningkatkan lingkungan tempat tinggal dan
+            kerja Anda.
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Service 1 -->
+          <div
+            class="bg-white p-10 rounded-sm shadow-sm hover-lift group reveal border border-transparent hover:border-inka-gold/20"
+            style="transition-delay: 0.1s">
+            <div
+              class="w-16 h-16 bg-inka-cream rounded-full flex items-center justify-center mb-6 group-hover:bg-inka-gold transition-colors duration-300">
+              <i
+                class="fas fa-home text-2xl text-inka-gold group-hover:text-white transition-colors duration-300"></i>
+            </div>
+            <h3
+              class="text-xl font-serif font-bold text-inka-charcoal mb-3"
+              data-id="Interior Residensial"
+              data-en="Residential Interior">
+              Interior Residensial
+            </h3>
+            <p
+              class="text-gray-500 font-light mb-6"
+              data-id="Menciptakan lingkungan rumah yang kohesif, elegan, dan nyaman yang mencerminkan gaya pribadi Anda."
+              data-en="Creating cohesive, elegant, and comfortable home environments that reflect your personal style.">
+              Menciptakan lingkungan rumah yang kohesif,
+              elegan, dan nyaman yang mencerminkan gaya
+              pribadi Anda.
+            </p>
+            <a
+              href="#contact"
+              class="text-sm font-semibold uppercase tracking-wider text-inka-charcoal group-hover:text-inka-gold transition-colors inline-flex items-center gap-2">
+              <span
+                data-id="Pelajari Lebih Lanjut"
+                data-en="Learn More"
+                >Pelajari Lebih Lanjut</span
+              >
+              <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+
+          <!-- Service 2 -->
+          <div
+            class="bg-white p-10 rounded-sm shadow-sm hover-lift group reveal border border-transparent hover:border-inka-gold/20"
+            style="transition-delay: 0.2s">
+            <div
+              class="w-16 h-16 bg-inka-cream rounded-full flex items-center justify-center mb-6 group-hover:bg-inka-gold transition-colors duration-300">
+              <i
+                class="fas fa-building text-2xl text-inka-gold group-hover:text-white transition-colors duration-300"></i>
+            </div>
+            <h3
+              class="text-xl font-serif font-bold text-inka-charcoal mb-3"
+              data-id="Komersial & Kantor"
+              data-en="Commercial & Office">
+              Komersial & Kantor
+            </h3>
+            <p
+              class="text-gray-500 font-light mb-6"
+              data-id="Merancang ruang kerja inspiratif yang meningkatkan produktivitas dan mencerminkan identitas merek Anda."
+              data-en="Designing inspiring workspaces that boost productivity and reflect your brand identity.">
+              Merancang ruang kerja inspiratif yang
+              meningkatkan produktivitas dan mencerminkan
+              identitas merek Anda.
+            </p>
+            <a
+              href="#contact"
+              class="text-sm font-semibold uppercase tracking-wider text-inka-charcoal group-hover:text-inka-gold transition-colors inline-flex items-center gap-2">
+              <span
+                data-id="Pelajari Lebih Lanjut"
+                data-en="Learn More"
+                >Pelajari Lebih Lanjut</span
+              >
+              <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+
+          <!-- Service 3 -->
+          <div
+            class="bg-white p-10 rounded-sm shadow-sm hover-lift group reveal border border-transparent hover:border-inka-gold/20"
+            style="transition-delay: 0.3s">
+            <div
+              class="w-16 h-16 bg-inka-cream rounded-full flex items-center justify-center mb-6 group-hover:bg-inka-gold transition-colors duration-300">
+              <i
+                class="fas fa-chair text-2xl text-inka-gold group-hover:text-white transition-colors duration-300"></i>
+            </div>
+            <h3
+              class="text-xl font-serif font-bold text-inka-charcoal mb-3"
+              data-id="Furnitur Kustom"
+              data-en="Custom Furniture">
+              Furnitur Kustom
+            </h3>
+            <p
+              class="text-gray-500 font-light mb-6"
+              data-id="Potongan furnitur pesanan yang dibuat dengan bahan premium agar pas dengan ruang Anda."
+              data-en="Bespoke furniture pieces crafted with premium materials to fit perfectly in your space.">
+              Potongan furnitur pesanan yang dibuat dengan
+              bahan premium agar pas dengan ruang Anda.
+            </p>
+            <a
+              href="#contact"
+              class="text-sm font-semibold uppercase tracking-wider text-inka-charcoal group-hover:text-inka-gold transition-colors inline-flex items-center gap-2">
+              <span
+                data-id="Pelajari Lebih Lanjut"
+                data-en="Learn More"
+                >Pelajari Lebih Lanjut</span
+              >
+              <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+
+          <!-- Service 4 -->
+          <div
+            class="bg-white p-10 rounded-sm shadow-sm hover-lift group reveal border border-transparent hover:border-inka-gold/20"
+            style="transition-delay: 0.4s">
+            <div
+              class="w-16 h-16 bg-inka-cream rounded-full flex items-center justify-center mb-6 group-hover:bg-inka-gold transition-colors duration-300">
+              <i
+                class="fas fa-hammer text-2xl text-inka-gold group-hover:text-white transition-colors duration-300"></i>
+            </div>
+            <h3
+              class="text-xl font-serif font-bold text-inka-charcoal mb-3"
+              data-id="Renovasi"
+              data-en="Renovation">
+              Renovasi
+            </h3>
+            <p
+              class="text-gray-500 font-light mb-6"
+              data-id="Layanan perombakan skala penuh untuk memberikan kehidupan baru ke ruang yang sudah usang atau tidak efisien."
+              data-en="Full-scale remodeling services to breathe new life into outdated or inefficient spaces.">
+              Layanan perombakan skala penuh untuk
+              memberikan kehidupan baru ke ruang yang sudah
+              usang atau tidak efisien.
+            </p>
+            <a
+              href="#contact"
+              class="text-sm font-semibold uppercase tracking-wider text-inka-charcoal group-hover:text-inka-gold transition-colors inline-flex items-center gap-2">
+              <span
+                data-id="Pelajari Lebih Lanjut"
+                data-en="Learn More"
+                >Pelajari Lebih Lanjut</span
+              >
+              <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+
+          <!-- Service 5 -->
+          <div
+            class="bg-white p-10 rounded-sm shadow-sm hover-lift group reveal border border-transparent hover:border-inka-gold/20 lg:col-span-2"
+            style="transition-delay: 0.5s">
+            <div
+              class="flex flex-col md:flex-row gap-8 items-center">
+              <div class="flex-shrink-0">
+                <div
+                  class="w-16 h-16 bg-inka-cream rounded-full flex items-center justify-center group-hover:bg-inka-gold transition-colors duration-300">
+                  <i
+                    class="fas fa-drafting-compass text-2xl text-inka-gold group-hover:text-white transition-colors duration-300"></i>
+                </div>
+              </div>
+              <div>
+                <h3
+                  class="text-xl font-serif font-bold text-inka-charcoal mb-3"
+                  data-id="Perencanaan & Konsultasi Ruang"
+                  data-en="Space Planning & Consultation">
+                  Perencanaan & Konsultasi Ruang
+                </h3>
+                <p
+                  class="text-gray-500 font-light mb-4"
+                  data-id="Perencanaan strategis untuk mengoptimalkan alur lalu lintas, memaksimalkan cahaya alami, dan memastikan setiap jengkal berfungsi dengan elegan."
+                  data-en="Strategic planning to optimize traffic flow, maximize natural light, and ensure every square foot serves a purpose elegantly.">
+                  Perencanaan strategis untuk mengoptimalkan
+                  alur lalu lintas, memaksimalkan cahaya
+                  alami, dan memastikan setiap jengkal
+                  berfungsi dengan elegan.
+                </p>
+                <a
+                  href="#contact"
+                  class="text-sm font-semibold uppercase tracking-wider text-inka-charcoal group-hover:text-inka-gold transition-colors inline-flex items-center gap-2">
+                  <span
+                    data-id="Pesan Konsultasi"
+                    data-en="Book Consultation"
+                    >Pesan Konsultasi</span
+                  >
+                  <i class="fas fa-arrow-right text-xs"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="flex flex-col md:flex-row justify-between items-end mb-12 reveal">
+          <div class="mb-6 md:mb-0">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-12 h-[2px] bg-inka-gold"></div>
+              <span
+                class="text-inka-gold font-semibold uppercase tracking-widest text-sm"
+                data-id="Karya Unggulan"
+                data-en="Featured Work"
+                >Karya Unggulan</span
+              >
+            </div>
+            <h2
+              class="text-4xl md:text-5xl font-serif font-bold text-inka-charcoal"
+              data-id="Portofolio Kami"
+              data-en="Our Portfolio">
+              Portofolio Kami
+            </h2>
+          </div>
+
+          <!-- Filter -->
+          <div class="flex flex-wrap gap-2 md:gap-4">
+            <button
+              class="filter-btn active px-4 py-2 text-sm font-medium uppercase tracking-wider border-b-2 border-inka-gold text-inka-charcoal"
+              data-filter="all"
+              data-id="Semua"
+              data-en="All">
+              Semua
+            </button>
+            <button
+              class="filter-btn px-4 py-2 text-sm font-medium uppercase tracking-wider border-b-2 border-transparent text-gray-500 hover:text-inka-charcoal transition-colors"
+              data-filter="residential"
+              data-id="Residensial"
+              data-en="Residential">
+              Residensial
+            </button>
+            <button
+              class="filter-btn px-4 py-2 text-sm font-medium uppercase tracking-wider border-b-2 border-transparent text-gray-500 hover:text-inka-charcoal transition-colors"
+              data-filter="office"
+              data-id="Kantor"
+              data-en="Office">
+              Kantor
+            </button>
+            <button
+              class="filter-btn px-4 py-2 text-sm font-medium uppercase tracking-wider border-b-2 border-transparent text-gray-500 hover:text-inka-charcoal transition-colors"
+              data-filter="luxury"
+              data-id="Mewah"
+              data-en="Luxury">
+              Mewah
+            </button>
+          </div>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          id="portfolio-grid">
+          <!-- Item 1 -->
+          <div
+            class="portfolio-item relative overflow-hidden rounded-sm group reveal filter-item residential luxury"
+            style="transition-delay: 0.1s">
+            <img
+              src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Luxury Living Room"
+              class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div
+              class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8">
+              <div class="portfolio-content">
+                <span
+                  class="text-inka-gold text-xs uppercase tracking-widest font-semibold mb-2 block"
+                  data-id="Residensial"
+                  data-en="Residential"
+                  >Residensial</span
+                >
+                <h3
+                  class="text-white text-2xl font-serif font-bold mb-2"
+                  data-id="Hunian Emas"
+                  data-en="The Golden Residence">
+                  Hunian Emas
+                </h3>
+                <a
+                  href="#"
+                  class="text-white/80 text-sm hover:text-white inline-flex items-center gap-2"
+                  ><span
+                    data-id="Lihat Detail"
+                    data-en="View Detail"
+                    >Lihat Detail</span
+                  >
+                  <i
+                    class="fas fa-arrow-right text-xs text-inka-gold"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div
+            class="portfolio-item relative overflow-hidden rounded-sm group reveal filter-item office"
+            style="transition-delay: 0.2s">
+            <img
+              src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Modern Office"
+              class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div
+              class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8">
+              <div class="portfolio-content">
+                <span
+                  class="text-inka-gold text-xs uppercase tracking-widest font-semibold mb-2 block"
+                  data-id="Kantor"
+                  data-en="Office"
+                  >Kantor</span
+                >
+                <h3
+                  class="text-white text-2xl font-serif font-bold mb-2"
+                  data-id="Ruang Kerja Tech Hub"
+                  data-en="Tech Hub Workspace">
+                  Ruang Kerja Tech Hub
+                </h3>
+                <a
+                  href="#"
+                  class="text-white/80 text-sm hover:text-white inline-flex items-center gap-2"
+                  ><span
+                    data-id="Lihat Detail"
+                    data-en="View Detail"
+                    >Lihat Detail</span
+                  >
+                  <i
+                    class="fas fa-arrow-right text-xs text-inka-gold"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div
+            class="portfolio-item relative overflow-hidden rounded-sm group reveal filter-item residential minimalist"
+            style="transition-delay: 0.3s">
+            <img
+              src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Minimalist Bedroom"
+              class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div
+              class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8">
+              <div class="portfolio-content">
+                <span
+                  class="text-inka-gold text-xs uppercase tracking-widest font-semibold mb-2 block"
+                  data-id="Minimalis"
+                  data-en="Minimalist"
+                  >Minimalis</span
+                >
+                <h3
+                  class="text-white text-2xl font-serif font-bold mb-2"
+                  data-id="Kamar Tidur Utama yang Tenang"
+                  data-en="Serene Bedroom Suite">
+                  Kamar Tidur Utama yang Tenang
+                </h3>
+                <a
+                  href="#"
+                  class="text-white/80 text-sm hover:text-white inline-flex items-center gap-2"
+                  ><span
+                    data-id="Lihat Detail"
+                    data-en="View Detail"
+                    >Lihat Detail</span
+                  >
+                  <i
+                    class="fas fa-arrow-right text-xs text-inka-gold"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div
+            class="portfolio-item relative overflow-hidden rounded-sm group reveal filter-item luxury residential"
+            style="transition-delay: 0.1s">
+            <img
+              src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Luxury Kitchen"
+              class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div
+              class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8">
+              <div class="portfolio-content">
+                <span
+                  class="text-inka-gold text-xs uppercase tracking-widest font-semibold mb-2 block"
+                  data-id="Mewah"
+                  data-en="Luxury"
+                  >Mewah</span
+                >
+                <h3
+                  class="text-white text-2xl font-serif font-bold mb-2"
+                  data-id="Dapur Marmer"
+                  data-en="Marble Kitchen Island">
+                  Dapur Marmer
+                </h3>
+                <a
+                  href="#"
+                  class="text-white/80 text-sm hover:text-white inline-flex items-center gap-2"
+                  ><span
+                    data-id="Lihat Detail"
+                    data-en="View Detail"
+                    >Lihat Detail</span
+                  >
+                  <i
+                    class="fas fa-arrow-right text-xs text-inka-gold"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div
+            class="portfolio-item relative overflow-hidden rounded-sm group reveal filter-item office minimalist"
+            style="transition-delay: 0.2s">
+            <img
+              src="https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Executive Room"
+              class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div
+              class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8">
+              <div class="portfolio-content">
+                <span
+                  class="text-inka-gold text-xs uppercase tracking-widest font-semibold mb-2 block"
+                  data-id="Kantor"
+                  data-en="Office"
+                  >Kantor</span
+                >
+                <h3
+                  class="text-white text-2xl font-serif font-bold mb-2"
+                  data-id="Ruang Direksi Eksekutif"
+                  data-en="Executive Boardroom">
+                  Ruang Direksi Eksekutif
+                </h3>
+                <a
+                  href="#"
+                  class="text-white/80 text-sm hover:text-white inline-flex items-center gap-2"
+                  ><span
+                    data-id="Lihat Detail"
+                    data-en="View Detail"
+                    >Lihat Detail</span
+                  >
+                  <i
+                    class="fas fa-arrow-right text-xs text-inka-gold"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div
+            class="portfolio-item relative overflow-hidden rounded-sm group reveal filter-item residential luxury"
+            style="transition-delay: 0.3s">
+            <img
+              src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Modern Bathroom"
+              class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div
+              class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8">
+              <div class="portfolio-content">
+                <span
+                  class="text-inka-gold text-xs uppercase tracking-widest font-semibold mb-2 block"
+                  data-id="Residensial"
+                  data-en="Residential"
+                  >Residensial</span
+                >
+                <h3
+                  class="text-white text-2xl font-serif font-bold mb-2"
+                  data-id="Kamar Mandi Utama ala Spa"
+                  data-en="Spa-like Master Bath">
+                  Kamar Mandi Utama ala Spa
+                </h3>
+                <a
+                  href="#"
+                  class="text-white/80 text-sm hover:text-white inline-flex items-center gap-2"
+                  ><span
+                    data-id="Lihat Detail"
+                    data-en="View Detail"
+                    >Lihat Detail</span
+                  >
+                  <i
+                    class="fas fa-arrow-right text-xs text-inka-gold"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12 reveal">
+          <a
+            href="#"
+            class="inline-block border border-inka-charcoal text-inka-charcoal px-8 py-3 rounded-sm font-medium tracking-wider hover:bg-inka-charcoal hover:text-white transition-all duration-300"
+            data-id="Lihat Semua Proyek"
+            data-en="View All Projects"
+            >Lihat Semua Proyek</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center mb-16 reveal">
+          <div
+            class="flex items-center justify-center gap-4 mb-4">
+            <div class="w-12 h-[2px] bg-inka-gold"></div>
+            <span
+              class="text-inka-gold font-semibold uppercase tracking-widest text-sm"
+              data-id="Informasi Tambahan"
+              data-en="Additional Information"
+              >Informasi Tambahan</span
+            >
+            <div class="w-12 h-[2px] bg-inka-gold"></div>
+          </div>
+          <h2
+            class="text-4xl md:text-5xl font-serif font-bold text-inka-charcoal mb-4"
+            data-id="Pertanyaan Umum"
+            data-en="Frequently Asked Questions">
+            Pertanyaan Umum
+          </h2>
+          <p
+            class="text-gray-600 font-light max-w-2xl mx-auto"
+            data-id="Temukan jawaban atas pertanyaan yang sering diajukan seputar layanan desain interior kami."
+            data-en="Find answers to common questions about our interior design services.">
+            Temukan jawaban atas pertanyaan yang sering
+            diajukan seputar layanan desain interior kami.
+          </p>
+        </div>
+
+        <!-- FAQ Accordion -->
+        <div class="space-y-4">
+          <!-- FAQ Item 1 -->
+          <div
+            class="faq-item border border-gray-100 rounded-sm bg-inka-whiteWarm overflow-hidden reveal shadow-sm"
+            style="transition-delay: 0.1s">
+            <button
+              class="faq-button w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none hover:bg-inka-cream transition-colors group">
+              <span
+                class="font-serif font-bold text-inka-charcoal text-lg group-hover:text-inka-gold transition-colors"
+                data-id="Apakah survei lokasi berbayar?"
+                data-en="Is the site survey paid?"
+                >Apakah survei lokasi berbayar?</span
+              >
+              <div
+                class="w-8 h-8 rounded-full bg-inka-cream flex items-center justify-center flex-shrink-0 group-hover:bg-inka-gold transition-colors duration-300">
+                <i
+                  class="fas fa-plus text-inka-gold group-hover:text-white transition-transform duration-300 faq-icon"></i>
+              </div>
+            </button>
+            <div
+              class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+              <div
+                class="px-6 pb-6 text-gray-500 font-light text-sm leading-relaxed border-t border-gray-100 mt-2 pt-4"
+                data-id="Konsultasi awal kami sepenuhnya gratis. Untuk biaya survei lokasi, mungkin akan dikenakan biaya operasional tergantung area. Namun, biaya survei ini akan dipotong (refund) dari total nilai proyek jika Anda melanjutkan ke tahap produksi bersama kami."
+                data-en="Our initial consultation is completely free. A site survey fee may apply depending on the area. However, this survey fee will be deducted (refunded) from the total project value if you proceed to the production stage with us.">
+                Konsultasi awal kami sepenuhnya gratis.
+                Untuk biaya survei lokasi, mungkin akan
+                dikenakan biaya operasional tergantung area.
+                Namun, biaya survei ini akan dipotong
+                (refund) dari total nilai proyek jika Anda
+                melanjutkan ke tahap produksi bersama kami.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div
+            class="faq-item border border-gray-100 rounded-sm bg-inka-whiteWarm overflow-hidden reveal shadow-sm"
+            style="transition-delay: 0.2s">
+            <button
+              class="faq-button w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none hover:bg-inka-cream transition-colors group">
+              <span
+                class="font-serif font-bold text-inka-charcoal text-lg group-hover:text-inka-gold transition-colors"
+                data-id="Berapa lama proses desain dan pengerjaan?"
+                data-en="How long is the design and execution process?"
+                >Berapa lama proses desain dan
+                pengerjaan?</span
+              >
+              <div
+                class="w-8 h-8 rounded-full bg-inka-cream flex items-center justify-center flex-shrink-0 group-hover:bg-inka-gold transition-colors duration-300">
+                <i
+                  class="fas fa-plus text-inka-gold group-hover:text-white transition-transform duration-300 faq-icon"></i>
+              </div>
+            </button>
+            <div
+              class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+              <div
+                class="px-6 pb-6 text-gray-500 font-light text-sm leading-relaxed border-t border-gray-100 mt-2 pt-4"
+                data-id="Waktu pengerjaan sangat bervariasi. Pembuatan konsep dan desain 3D biasanya memakan waktu 1-2 minggu. Sementara tahap produksi furnitur dan fit-out di lokasi dapat memakan waktu 4-8 minggu, sangat bergantung pada luasan dan kerumitan desain."
+                data-en="Execution time varies greatly. Concept creation and 3D design typically take 1-2 weeks. Meanwhile, the furniture production and on-site fit-out phase can take 4-8 weeks, highly dependent on the size and complexity of the design.">
+                Waktu pengerjaan sangat bervariasi.
+                Pembuatan konsep dan desain 3D biasanya
+                memakan waktu 1-2 minggu. Sementara tahap
+                produksi furnitur dan fit-out di lokasi
+                dapat memakan waktu 4-8 minggu, sangat
+                bergantung pada luasan dan kerumitan desain.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div
+            class="faq-item border border-gray-100 rounded-sm bg-inka-whiteWarm overflow-hidden reveal shadow-sm"
+            style="transition-delay: 0.3s">
+            <button
+              class="faq-button w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none hover:bg-inka-cream transition-colors group">
+              <span
+                class="font-serif font-bold text-inka-charcoal text-lg group-hover:text-inka-gold transition-colors"
+                data-id="Bagaimana sistem perhitungan biayanya?"
+                data-en="How is the pricing calculated?"
+                >Bagaimana sistem perhitungan
+                biayanya?</span
+              >
+              <div
+                class="w-8 h-8 rounded-full bg-inka-cream flex items-center justify-center flex-shrink-0 group-hover:bg-inka-gold transition-colors duration-300">
+                <i
+                  class="fas fa-plus text-inka-gold group-hover:text-white transition-transform duration-300 faq-icon"></i>
+              </div>
+            </button>
+            <div
+              class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+              <div
+                class="px-6 pb-6 text-gray-500 font-light text-sm leading-relaxed border-t border-gray-100 mt-2 pt-4"
+                data-id="Kami tidak menerapkan harga baku per meter yang kaku. Setiap harga bersifat bespoke (kustom), disesuaikan dengan material yang Anda pilih, ukuran luasan nyata, dan detail desain. Rencana Anggaran Biaya (RAB) yang transparan akan diberikan setelah proses survei."
+                data-en="We do not apply rigid per-meter pricing. Every price is bespoke (custom), tailored to the materials you choose, actual area size, and design details. A transparent Budget Plan (RAB) will be provided after the survey process.">
+                Kami tidak menerapkan harga baku per meter
+                yang kaku. Setiap harga bersifat bespoke
+                (kustom), disesuaikan dengan material yang
+                Anda pilih, ukuran luasan nyata, dan detail
+                desain. Rencana Anggaran Biaya (RAB) yang
+                transparan akan diberikan setelah proses
+                survei.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div
+            class="faq-item border border-gray-100 rounded-sm bg-inka-whiteWarm overflow-hidden reveal shadow-sm"
+            style="transition-delay: 0.4s">
+            <button
+              class="faq-button w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none hover:bg-inka-cream transition-colors group">
+              <span
+                class="font-serif font-bold text-inka-charcoal text-lg group-hover:text-inka-gold transition-colors"
+                data-id="Apakah ada garansi pasca-pengerjaan?"
+                data-en="Is there a post-construction warranty?"
+                >Apakah ada garansi pasca-pengerjaan?</span
+              >
+              <div
+                class="w-8 h-8 rounded-full bg-inka-cream flex items-center justify-center flex-shrink-0 group-hover:bg-inka-gold transition-colors duration-300">
+                <i
+                  class="fas fa-plus text-inka-gold group-hover:text-white transition-transform duration-300 faq-icon"></i>
+              </div>
+            </button>
+            <div
+              class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+              <div
+                class="px-6 pb-6 text-gray-500 font-light text-sm leading-relaxed border-t border-gray-100 mt-2 pt-4"
+                data-id="Ya, komitmen kami pada kualitas premium mencakup masa garansi retensi pengerjaan. Jika ada cacat produksi atau kerusakan instalasi yang bukan karena kelalaian penggunaan, tim kami akan memperbaikinya tanpa tambahan biaya."
+                data-en="Yes, our commitment to premium quality includes a workmanship retention warranty period. If there are any production defects or installation damages not caused by user negligence, our team will repair them at no additional cost.">
+                Ya, komitmen kami pada kualitas premium
+                mencakup masa garansi retensi pengerjaan.
+                Jika ada cacat produksi atau kerusakan
+                instalasi yang bukan karena kelalaian
+                penggunaan, tim kami akan memperbaikinya
+                tanpa tambahan biaya.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section
+      class="py-20 bg-inka-charcoal relative overflow-hidden">
+      <!-- Abstract Shapes -->
+      <div
+        class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+      <div
+        class="absolute bottom-0 left-0 w-96 h-96 bg-inka-gold opacity-10 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
+
+      <div
+        class="max-w-4xl mx-auto px-4 text-center relative z-10 reveal">
+        <i
+          class="fas fa-quote-left text-4xl text-inka-gold/50 mb-6 block"></i>
+        <h2
+          class="text-3xl md:text-5xl font-serif font-bold text-white mb-6 leading-tight"
+          data-id="Siap Membangun <br/><span class='text-gradient'>Interior Impian Anda?</span>"
+          data-en="Ready To Build Your <br/><span class='text-gradient'>Dream Interior?</span>">
+          Siap Membangun <br /><span class="text-gradient"
+            >Interior Impian Anda?</span
+          >
+        </h2>
+        <p
+          class="text-gray-300 font-light mb-10 max-w-2xl mx-auto"
+          data-id="Mari berkolaborasi untuk mewujudkan visi Anda. Jadwalkan konsultasi gratis dengan pakar desain kami hari ini."
+          data-en="Let's collaborate to bring your vision to life. Schedule a complimentary consultation with our design experts today.">
+          Mari berkolaborasi untuk mewujudkan visi Anda.
+          Jadwalkan konsultasi gratis dengan pakar desain
+          kami hari ini.
+        </p>
+        <a
+          href="#contact"
+          class="inline-block bg-inka-gold text-white px-10 py-4 rounded-sm font-medium tracking-widest uppercase hover:bg-white hover:text-inka-charcoal transition-all duration-300 shadow-[0_0_20px_rgba(201,167,77,0.3)] hover:shadow-xl"
+          data-id="Konsultasi Gratis"
+          data-en="Free Consultation">
+          Konsultasi Gratis
+        </a>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-inka-cream">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <!-- Contact Info -->
+          <div class="reveal">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-12 h-[2px] bg-inka-gold"></div>
+              <span
+                class="text-inka-gold font-semibold uppercase tracking-widest text-sm"
+                data-id="Hubungi Kami"
+                data-en="Contact Us"
+                >Hubungi Kami</span
+              >
+            </div>
+            <h2
+              class="text-4xl md:text-5xl font-serif font-bold text-inka-charcoal mb-6"
+              data-id="Kontak Kami"
+              data-en="Get In Touch">
+              Kontak Kami
+            </h2>
+            <p
+              class="text-gray-600 font-light mb-10 leading-relaxed"
+              data-id="Punya proyek impian? Kunjungi studio kami atau tinggalkan pesan. Kami siap mewujudkan kebutuhan desain interior Anda."
+              data-en="Have a dream project? Visit our studio or leave a message. We are ready to realize your interior design needs.">
+              Punya proyek impian? Kunjungi studio kami atau
+              tinggalkan pesan. Kami siap mewujudkan
+              kebutuhan desain interior Anda.
+            </p>
+
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-12 h-12 bg-white rounded-sm flex items-center justify-center text-inka-gold shadow-sm flex-shrink-0">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                  <h4
+                    class="font-semibold text-inka-charcoal mb-1"
+                    data-id="Alamat Studio"
+                    data-en="Studio Address">
+                    Alamat Studio
+                  </h4>
+                  <p
+                    class="text-sm text-gray-500 font-light">
+                    Jl. Swadaya Raya, Sukahati<br />Kec.
+                    Cibinong, Kabupaten Bogor<br />Jawa
+                    Barat 16913
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-12 h-12 bg-white rounded-sm flex items-center justify-center text-inka-gold shadow-sm flex-shrink-0">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div>
+                  <h4
+                    class="font-semibold text-inka-charcoal mb-1">
+                    Email
+                  </h4>
+                  <a
+                    href="mailto:interiorinka.id@gmail.com"
+                    class="text-sm text-gray-500 font-light hover:text-inka-gold transition-colors"
+                    >interiorinka.id@gmail.com</a
+                  >
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-12 h-12 bg-white rounded-sm flex items-center justify-center text-inka-gold shadow-sm flex-shrink-0">
+                  <i class="fab fa-whatsapp text-xl"></i>
+                </div>
+                <div>
+                  <h4
+                    class="font-semibold text-inka-charcoal mb-1">
+                    WhatsApp
+                  </h4>
+                  <a
+                    href="https://wa.me/6285123356088"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-sm text-gray-500 font-light hover:text-inka-gold transition-colors"
+                    >+62 851-2335-6088</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Map Placeholder -->
+            <div
+              class="mt-10 h-48 bg-gray-200 rounded-sm overflow-hidden relative">
+              <img
+                src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Map Location"
+                class="w-full h-full object-cover opacity-60 grayscale mix-blend-multiply" />
+              <div
+                class="absolute inset-0 flex items-center justify-center">
+                <a
+                  href="https://maps.google.com/?q=Jl.+Swadaya+Raya,+Sukahati,+Kec.+Cibinong,+Kabupaten+Bogor,+Jawa+Barat+16913"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bg-white/90 backdrop-blur-sm text-inka-charcoal px-4 py-2 rounded-sm text-sm font-medium shadow-lg hover:bg-inka-gold hover:text-white transition-colors">
+                  <span
+                    data-id="Lihat di Maps"
+                    data-en="View on Maps"
+                    >Lihat di Maps</span
+                  >
+                  <i
+                    class="fas fa-external-link-alt ml-1 text-xs"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div
+            class="bg-white p-8 md:p-10 rounded-sm shadow-xl reveal"
+            style="transition-delay: 0.2s">
+            <h3
+              class="text-2xl font-serif font-bold text-inka-charcoal mb-6"
+              data-id="Kirim Pesan"
+              data-en="Send a Message">
+              Kirim Pesan
+            </h3>
+            <form id="contact-form" class="space-y-6">
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    for="name"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    data-id="Nama Lengkap"
+                    data-en="Full Name"
+                    >Nama Lengkap</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    required
+                    class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-inka-gold transition-colors bg-transparent"
+                    placeholder="John Doe" />
+                </div>
+                <div>
+                  <label
+                    for="phone"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    data-id="Nomor WhatsApp"
+                    data-en="WhatsApp Number"
+                    >Nomor WhatsApp</label
+                  >
+                  <input
+                    type="tel"
+                    id="phone"
+                    required
+                    class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-inka-gold transition-colors bg-transparent"
+                    placeholder="+62 812..." />
+                </div>
+              </div>
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  data-id="Alamat Email"
+                  data-en="Email Address"
+                  >Alamat Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  required
+                  class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-inka-gold transition-colors bg-transparent"
+                  placeholder="john@example.com" />
+              </div>
+              <div>
+                <label
+                  for="service"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  data-id="Tertarik Pada"
+                  data-en="Interested In"
+                  >Tertarik Pada</label
+                >
+                <select
+                  id="service"
+                  class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-inka-gold transition-colors bg-transparent text-gray-500">
+                  <option
+                    data-id="Interior Residensial"
+                    data-en="Residential Interior"
+                    value="Residential Interior">
+                    Interior Residensial
+                  </option>
+                  <option
+                    data-id="Interior Kantor"
+                    data-en="Office Interior"
+                    value="Office Interior">
+                    Interior Kantor
+                  </option>
+                  <option
+                    data-id="Furnitur Kustom"
+                    data-en="Custom Furniture"
+                    value="Custom Furniture">
+                    Furnitur Kustom
+                  </option>
+                  <option
+                    data-id="Renovasi"
+                    data-en="Renovation"
+                    value="Renovation">
+                    Renovasi
+                  </option>
+                </select>
+              </div>
+              <div>
+                <label
+                  for="message"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  data-id="Detail Proyek"
+                  data-en="Project Details"
+                  >Detail Proyek</label
+                >
+                <textarea
+                  id="message"
+                  required
+                  rows="4"
+                  class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-inka-gold transition-colors bg-transparent resize-none"
+                  data-id="Ceritakan tentang ruang dan visi Anda..."
+                  data-en="Tell us about your space and vision..."
+                  placeholder="Ceritakan tentang ruang dan visi Anda..."></textarea>
+              </div>
+
+              <!-- Form Status Message -->
+              <div
+                id="form-status"
+                class="hidden text-sm p-3 rounded-sm"></div>
+
+              <button
+                type="submit"
+                id="submit-btn"
+                class="w-full bg-inka-charcoal text-white py-4 rounded-sm font-medium tracking-wider uppercase hover:bg-inka-gold transition-all duration-300 flex justify-center items-center gap-2">
+                <span
+                  class="btn-text"
+                  data-id="Kirim Permintaan"
+                  data-en="Send Request"
+                  >Kirim Permintaan</span
+                >
+                <i
+                  class="fas fa-spinner fa-spin hidden"
+                  id="submit-spinner"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1A1A1A] text-white pt-20 pb-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          <!-- Brand -->
+          <div class="lg:col-span-1">
+            <a
+              href="#"
+              class="inline-block text-3xl font-sans font-bold tracking-widest text-white mb-6">
+              <span class="text-inka-gold">IΠKΛ</span><br />
+              <span
+                class="text-[12px] tracking-[0.3em] font-light uppercase mt-[-5px] block text-center"
+                >Interior</span
+              >
+            </a>
+            <p
+              class="text-gray-400 font-light text-sm leading-relaxed mb-6"
+              data-id="Mengubah ruang menjadi lingkungan hidup yang elegan melalui desain inovatif dan eksekusi yang teliti."
+              data-en="Transforming spaces into elegant living environments through innovative design and meticulous execution.">
+              Mengubah ruang menjadi lingkungan hidup yang
+              elegan melalui desain inovatif dan eksekusi
+              yang teliti.
+            </p>
+            <!-- Socials -->
+            <div class="flex gap-4">
+              <a
+                href="https://www.instagram.com/inkainterior.id/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 hover:border-inka-gold hover:text-inka-gold transition-all">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.tiktok.com/@inkainterior"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 hover:border-inka-gold hover:text-inka-gold transition-all">
+                <i class="fab fa-tiktok"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h4
+              class="text-lg font-serif font-bold mb-6 relative inline-block">
+              <span
+                data-id="Tautan Cepat"
+                data-en="Quick Links"
+                >Tautan Cepat</span
+              >
+              <span
+                class="absolute bottom-0 left-0 w-1/2 h-[2px] bg-inka-gold"></span>
+            </h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#home"
+                  class="text-gray-400 hover:text-inka-gold transition-colors text-sm"
+                  data-id="Beranda"
+                  data-en="Home"
+                  >Beranda</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-400 hover:text-inka-gold transition-colors text-sm"
+                  data-id="Tentang Kami"
+                  data-en="About Us"
+                  >Tentang Kami</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-gray-400 hover:text-inka-gold transition-colors text-sm"
+                  data-id="Layanan"
+                  data-en="Services"
+                  >Layanan</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#portfolio"
+                  class="text-gray-400 hover:text-inka-gold transition-colors text-sm"
+                  data-id="Portofolio"
+                  data-en="Portfolio"
+                  >Portofolio</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-gray-400 hover:text-inka-gold transition-colors text-sm"
+                  data-id="Kontak"
+                  data-en="Contact"
+                  >Kontak</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div>
+            <h4
+              class="text-lg font-serif font-bold mb-6 relative inline-block">
+              <span data-id="Layanan" data-en="Services"
+                >Layanan</span
+              >
+              <span
+                class="absolute bottom-0 left-0 w-1/2 h-[2px] bg-inka-gold"></span>
+            </h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-inka-gold transition-colors text-sm"
+                  data-id="Desain Residensial"
+                  data-en="Residential Design"
+                  >Desain Residensial</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-inka-gold transition-colors text-sm"
+                  data-id="Kantor & Komersial"
+                  data-en="Office & Commercial"
+                  >Kantor & Komersial</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-inka-gold transition-colors text-sm"
+                  data-id="Furnitur Kustom"
+                  data-en="Custom Furniture"
+                  >Furnitur Kustom</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-inka-gold transition-colors text-sm"
+                  data-id="Perencanaan Ruang"
+                  data-en="Space Planning"
+                  >Perencanaan Ruang</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-inka-gold transition-colors text-sm"
+                  data-id="Renovasi"
+                  data-en="Renovation"
+                  >Renovasi</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div>
+            <h4
+              class="text-lg font-serif font-bold mb-6 relative inline-block">
+              <span data-id="Buletin" data-en="Newsletter"
+                >Buletin</span
+              >
+              <span
+                class="absolute bottom-0 left-0 w-1/2 h-[2px] bg-inka-gold"></span>
+            </h4>
+            <p
+              class="text-gray-400 text-sm mb-4"
+              data-id="Berlangganan untuk mendapatkan berita dan pembaruan desain terbaru."
+              data-en="Subscribe to get the latest design news and updates.">
+              Berlangganan untuk mendapatkan berita dan
+              pembaruan desain terbaru.
+            </p>
+            <form class="flex flex-col gap-3">
+              <input
+                type="email"
+                data-id="Alamat Email Anda"
+                data-en="Your Email Address"
+                placeholder="Alamat Email Anda"
+                class="bg-gray-800 border border-gray-700 text-white px-4 py-3 text-sm focus:outline-none focus:border-inka-gold rounded-sm" />
+              <button
+                type="button"
+                class="bg-inka-gold text-white px-4 py-3 text-sm font-medium uppercase tracking-wider hover:bg-white hover:text-inka-charcoal transition-colors rounded-sm"
+                data-id="Langganan"
+                data-en="Subscribe">
+                Langganan
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p
+            class="text-gray-500 text-sm"
+            data-id="&copy; 2026 INKA INTERIOR ID. Hak cipta dilindungi undang-undang. Dikembangkan oleh <a href='#' class='text-inka-gold hover:text-white transition-colors'>meowcode</a>."
+            data-en="&copy; 2026 INKA INTERIOR ID. All rights reserved. Developed by <a href='#' class='text-inka-gold hover:text-white transition-colors'>meowcode</a>.">
+            &copy; 2026 INKA INTERIOR ID. Hak cipta
+            dilindungi undang-undang. Dikembangkan oleh
+            <a
+              href="#"
+              class="text-inka-gold hover:text-white transition-colors"
+              >meowcode</a
+            >.
+          </p>
+          <div class="flex gap-4">
+            <a
+              href="#"
+              class="text-gray-500 hover:text-inka-gold text-sm transition-colors"
+              data-id="Kebijakan Privasi"
+              data-en="Privacy Policy"
+              >Kebijakan Privasi</a
+            >
+            <a
+              href="#"
+              class="text-gray-500 hover:text-inka-gold text-sm transition-colors"
+              data-id="Syarat Layanan"
+              data-en="Terms of Service"
+              >Syarat Layanan</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating AI Chatbot Button -->
+    <div
+      class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+      <!-- Chat Window -->
+      <div
+        id="chat-window"
+        class="hidden w-80 sm:w-96 bg-white rounded-lg shadow-2xl mb-4 border border-gray-100 overflow-hidden chat-window flex flex-col h-[450px]">
+        <!-- Header -->
+        <div
+          class="bg-inka-charcoal text-white p-4 flex justify-between items-center relative overflow-hidden">
+          <div
+            class="absolute inset-0 bg-gold-gradient opacity-10"></div>
+          <div
+            class="flex items-center gap-3 relative z-10">
+            <div
+              class="w-10 h-10 rounded-full bg-inka-gold flex items-center justify-center shadow-md">
+              <i class="fas fa-robot text-white"></i>
+            </div>
+            <div>
+              <h4 class="font-serif font-bold text-sm">
+                INKA AI Assistant
+              </h4>
+              <p class="text-xs text-inka-gold">
+                CS 24/7 Online
+              </p>
+            </div>
+          </div>
+          <button
+            id="close-chat"
+            class="text-gray-300 hover:text-white transition-colors relative z-10 focus:outline-none">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <!-- Messages Area -->
+        <div
+          id="chat-messages"
+          class="flex-1 p-4 overflow-y-auto bg-inka-whiteWarm flex flex-col gap-4">
+          <!-- Welcome Message -->
+          <div class="flex gap-3 max-w-[85%]">
+            <div
+              class="w-8 h-8 rounded-full bg-inka-gold flex-shrink-0 flex items-center justify-center mt-1">
+              <i
+                class="fas fa-robot text-white text-xs"></i>
+            </div>
+            <div
+              class="bg-white p-3 rounded-2xl rounded-tl-none shadow-sm border border-gray-100 text-sm text-gray-700 chat-welcome-msg"
+              data-id="Halo! Selamat datang di INKA INTERIOR. Saya Asisten AI Anda. Bagaimana saya bisa membantu Anda mewujudkan ruang impian Anda hari ini?"
+              data-en="Hello! Welcome to INKA INTERIOR. I'm your AI Assistant. How can I help you construct your dream space today?">
+              Halo! Selamat datang di INKA INTERIOR. Saya
+              Asisten AI Anda. Bagaimana saya bisa membantu
+              Anda mewujudkan ruang impian Anda hari ini?
+            </div>
+          </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="p-3 bg-white border-t border-gray-100">
+          <form
+            id="chat-input-form"
+            class="flex items-center gap-2 relative">
+            <input
+              type="text"
+              id="chat-input"
+              data-id="Ketik pesan Anda di sini..."
+              data-en="Type your message here..."
+              placeholder="Ketik pesan Anda di sini..."
+              class="flex-1 bg-inka-cream border border-gray-200 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-inka-gold transition-colors"
+              autocomplete="off" />
+            <button
+              type="submit"
+              class="w-10 h-10 rounded-full bg-inka-gold text-white flex items-center justify-center hover:bg-inka-charcoal transition-colors flex-shrink-0 focus:outline-none">
+              <i
+                class="fas fa-paper-plane text-xs -ml-1"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Floating Button -->
+      <button
+        id="chatbot-toggle"
+        class="w-16 h-16 rounded-full bg-gradient-to-r from-inka-gold to-[#b5953d] text-white flex items-center justify-center shadow-[0_5px_25px_rgba(201,167,77,0.5)] hover:shadow-[0_8px_30px_rgba(201,167,77,0.6)] hover:scale-105 transition-all duration-300 floating-bot focus:outline-none group">
+        <i
+          class="fas fa-comment-dots text-2xl group-hover:hidden"></i>
+        <i
+          class="fas fa-robot text-2xl hidden group-hover:block"></i>
+        <!-- Online Indicator -->
+        <span
+          class="absolute top-1 right-1 w-4 h-4 bg-green-500 border-2 border-white rounded-full"></span>
+      </button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+  </body>
+</html>
